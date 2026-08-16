@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Machine Learning Assignment 2
 
 # ###############################
@@ -162,3 +163,6 @@ project-folder/
 
 ## Screenshot section (for final PDF)
 - Add one screenshot of execution on BITS Virtual Lab in the final submitted PDF.
+=======
+# ML_Assignment_2
+>>>>>>> fef8e67434f1908a096ab701bca76a7364b2da72
