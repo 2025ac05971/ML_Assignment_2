@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Machine Learning Assignment 2
 
 # ###############################
@@ -40,13 +39,13 @@ Implemented models:
 5. Random Forest (Ensemble)
 
 ### Comparison Table (Required Metrics)
-| ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
-|---|---:|---:|---:|---:|---:|---:|
-| Logistic Regression | 0.9649 | 0.9960 | 0.9750 | 0.9286 | 0.9512 | 0.9245 |
-| Decision Tree | 0.9298 | 0.9246 | 0.9048 | 0.9048 | 0.9048 | 0.8492 |
-| KNN | 0.9561 | 0.9823 | 0.9744 | 0.9048 | 0.9383 | 0.9058 |
-| Naive Bayes | 0.9211 | 0.9891 | 0.9231 | 0.8571 | 0.8889 | 0.8292 |
-| Random Forest (Ensemble) | 0.9649 | 0.9970 | 1.0000 | 0.9048 | 0.9500 | 0.9258 |
+| Model               | Accuracy | AUC    | Precision | Recall | F1     | MCC    |
+|---------------------|----------|--------|-----------|--------|--------|--------|
+| Random Forest       | 0.9649   | 0.9970 | 1.0000    | 0.9048 | 0.9500 | 0.9258 |
+| Logistic Regression | 0.9649   | 0.9960 | 0.9750    | 0.9286 | 0.9512 | 0.9245 |
+| KNN                 | 0.9561   | 0.9823 | 0.9744    | 0.9048 | 0.9383 | 0.9058 |
+| Decision Tree       | 0.9298   | 0.9246 | 0.9048    | 0.9048 | 0.9048 | 0.8492 |
+| Naive Bayes         | 0.9211   | 0.9891 | 0.9231    | 0.8571 | 0.8889 | 0.8292 |
 
 ### Observations on Model Performance
 | ML Model Name | Observation about model performance |
@@ -59,8 +58,7 @@ Implemented models:
 | Overall Winner for your dataset? | **Random Forest (Ensemble)** |
 
 ## Project structure
-```text
-project-folder/
+ML_Assignment_2/
 |-- app.py
 |-- requirements.txt
 |-- README.md
@@ -75,7 +73,6 @@ project-folder/
 |   |-- naive_bayes.pkl
 |   |-- random_forest.pkl
 |   |-- feature_columns.json
-```
 
 ## Streamlit app features implemented
 - CSV upload option for test data
@@ -87,48 +84,8 @@ project-folder/
 
 
 ## Streamlit Deployment Link
-- Add your deployed Streamlit link here after deployment:
-- Example format: https://your-app-name.streamlit.app
+- https://2025ac05971.streamlit.app/
 
-## Submission checklist
-## Assignment Requirements Verification
-
-### Data Requirements
-- **Minimum Feature Size:** 12 (Using 30 features)
-- **Minimum Instance Size:** 500 (Using 569 instances)
-- **Data Type:** Numeric features
-- **Train/Test Split:** 80/20
-	- Training set: 455 instances (80%)
-	- Test set: 114 instances (20%)
-	- Stratified split for balanced classes
-
-### Model Requirements
-- **Number of Models:** 5
-	1. Logistic Regression
-	2. Decision Tree Classifier
-	3. K-Nearest Neighbors (KNN)
-	4. Naive Bayes (GaussianNB)
-	5. Random Forest (Ensemble)
-
-### Metric Requirements
-- **Accuracy:** Implemented
-- **AUC (Area Under Curve):** Implemented
-- **Precision:** Implemented
-- **Recall:** Implemented
-- **F1 Score:** Implemented
-- **MCC (Matthews Correlation Coefficient):** Implemented
-
-### File Format Requirements
-- **Model Files:** *.pkl (joblib serialization)
-	- logistic_regression.pkl
-	- decision_tree.pkl
-	- knn.pkl
-	- naive_bayes.pkl
-	- random_forest.pkl
-- **Feature Config:** *.json
-	- feature_columns.json (30 feature names)
-- **Training Script:** *.py
-	- train_models.py
 
 ### Streamlit App Features
 - CSV file upload with validation
@@ -145,24 +102,6 @@ project-folder/
 	- Features count: 30
 	- Class distribution: Benign/Malignant
 
-### Code Quality & Documentation
-- Original implementation (no plagiarism)
-	- Plagiarism check comments added to all scripts
-	- All code written from scratch for this assignment
-- Proper error handling
-- Feature validation
-- Comments documenting key functions
-- README with complete documentation
-
-## Submission checklist
-- GitHub repo link works
-- Streamlit app link works
-- App opens without errors
-- All required features are implemented
-- README content included in submitted PDF
 
 ## Screenshot section (for final PDF)
-- Add one screenshot of execution on BITS Virtual Lab in the final submitted PDF.
-=======
-# ML_Assignment_2
->>>>>>> fef8e67434f1908a096ab701bca76a7364b2da72
+- Added in pdf file.
