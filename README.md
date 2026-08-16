@@ -1,13 +1,18 @@
-# Machine Learning Assignment 2 - Breast Cancer Classification
+# Machine Learning Assignment 2
+
+# ###############################
+# Ankit Nainwal  ################
+# 2025AC05971    ################
+# ###############################
 
 ## a) Problem statement
-The goal of this assignment is to classify breast cancer tumors as **Malignant (M)** or **Benign (B)** using machine learning models. I have trained multiple classification models on the same dataset and compared them using required evaluation metrics.
+In this assignment, I have built a binary classification system to classify breast cancer tumors as Malignant (M) or Benign (B). I implemented all required ML models on the same dataset and evaluated them using the required metrics.
 
 ## b) Dataset description
 - Dataset name: Breast Cancer Wisconsin (Diagnostic) Data Set
 - Source: Kaggle - https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data
 - Total records: 569
-- Features used: 30 numeric features (minimum required was 12)
+- Features used: 30 numeric features
 - Target column: `diagnosis` (M = malignant, B = benign)
 - Problem type: Binary Classification
 
@@ -17,6 +22,13 @@ Files used:
 
 ## c) Github Repository Link
 - Repository: https://github.com/2025ac05971/ML_Assignment_2
+
+Mandatory files in repo:
+- `app.py`
+- `requirements.txt`
+- `README.md`
+- `test_data.csv`
+- `model/` (model files and training script)
 
 ## d) Models used
 Implemented models:
@@ -70,24 +82,83 @@ project-folder/
 - Display of evaluation metrics
 - Confusion matrix
 - Classification report
+- Results of different models visible in app using model comparison and model selection
 
-## How to run locally
-1. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-2. Train and save models
-```bash
-python model/train_models.py
-```
-3. Start Streamlit app
-```bash
-streamlit run app.py
-```
 
 ## Streamlit Deployment Link
 - Add your deployed Streamlit link here after deployment:
 - Example format: https://your-app-name.streamlit.app
+
+## Submission checklist
+## Assignment Requirements Verification
+
+### Data Requirements
+- **Minimum Feature Size:** 12 (Using 30 features)
+- **Minimum Instance Size:** 500 (Using 569 instances)
+- **Data Type:** Numeric features
+- **Train/Test Split:** 80/20
+	- Training set: 455 instances (80%)
+	- Test set: 114 instances (20%)
+	- Stratified split for balanced classes
+
+### Model Requirements
+- **Number of Models:** 5
+	1. Logistic Regression
+	2. Decision Tree Classifier
+	3. K-Nearest Neighbors (KNN)
+	4. Naive Bayes (GaussianNB)
+	5. Random Forest (Ensemble)
+
+### Metric Requirements
+- **Accuracy:** Implemented
+- **AUC (Area Under Curve):** Implemented
+- **Precision:** Implemented
+- **Recall:** Implemented
+- **F1 Score:** Implemented
+- **MCC (Matthews Correlation Coefficient):** Implemented
+
+### File Format Requirements
+- **Model Files:** *.pkl (joblib serialization)
+	- logistic_regression.pkl
+	- decision_tree.pkl
+	- knn.pkl
+	- naive_bayes.pkl
+	- random_forest.pkl
+- **Feature Config:** *.json
+	- feature_columns.json (30 feature names)
+- **Training Script:** *.py
+	- train_models.py
+
+### Streamlit App Features
+- CSV file upload with validation
+- Model comparison table (all 5 models, 6 metrics)
+- Model selection with **default model** and cancel button
+- Individual model metrics display
+- Confusion matrix visualization
+- Classification report with labels
+- Multi-model comparison functionality
+- Model ranking by performance
+- Dataset information display
+	- Training data: 569 instances
+	- Test data: 114 instances (20% split)
+	- Features count: 30
+	- Class distribution: Benign/Malignant
+
+### Code Quality & Documentation
+- Original implementation (no plagiarism)
+	- Plagiarism check comments added to all scripts
+	- All code written from scratch for this assignment
+- Proper error handling
+- Feature validation
+- Comments documenting key functions
+- README with complete documentation
+
+## Submission checklist
+- GitHub repo link works
+- Streamlit app link works
+- App opens without errors
+- All required features are implemented
+- README content included in submitted PDF
 
 ## Screenshot section (for final PDF)
 - Add one screenshot of execution on BITS Virtual Lab in the final submitted PDF.
