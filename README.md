@@ -58,7 +58,7 @@ Implemented models:
 | Overall Winner for your dataset? | **Random Forest (Ensemble)** |
 
 ## Project structure
-'''
+```
 ML_Assignment_2/
 |-- app.py
 |-- requirements.txt
@@ -74,7 +74,7 @@ ML_Assignment_2/
 |   |-- naive_bayes.pkl
 |   |-- random_forest.pkl
 |   |-- feature_columns.json
-'''
+```
 
 ## Streamlit app features implemented
 - CSV upload option for test data
