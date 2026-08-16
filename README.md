@@ -58,6 +58,7 @@ Implemented models:
 | Overall Winner for your dataset? | **Random Forest (Ensemble)** |
 
 ## Project structure
+'''
 ML_Assignment_2/
 |-- app.py
 |-- requirements.txt
@@ -73,6 +74,7 @@ ML_Assignment_2/
 |   |-- naive_bayes.pkl
 |   |-- random_forest.pkl
 |   |-- feature_columns.json
+'''
 
 ## Streamlit app features implemented
 - CSV upload option for test data
@@ -90,7 +92,7 @@ ML_Assignment_2/
 ### Streamlit App Features
 - CSV file upload with validation
 - Model comparison table (all 5 models, 6 metrics)
-- Model selection with **default model** and cancel button
+- Model selection with default model and cancel button
 - Individual model metrics display
 - Confusion matrix visualization
 - Classification report with labels
