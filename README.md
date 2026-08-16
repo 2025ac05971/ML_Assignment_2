@@ -68,6 +68,7 @@ ML_Assignment_2/
 |-- model_metrics.csv
 |-- model/
 |   |-- train_models.py
+|   |-- train_models.ipynb
 |   |-- logistic_regression.pkl
 |   |-- decision_tree.pkl
 |   |-- knn.pkl
