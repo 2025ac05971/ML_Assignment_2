@@ -1,12 +1,10 @@
 # Machine Learning Assignment 2
 
-# ###############################
-# Ankit Nainwal  ################
-# 2025AC05971    ################
-# ###############################
+Name: Ankit Nainwal  
+Roll No: 2025AC05971
 
 ## a) Problem statement
-In this assignment, I have built a binary classification system to classify breast cancer tumors as Malignant (M) or Benign (B). I implemented all required ML models on the same dataset and evaluated them using the required metrics.
+This project builds a binary classification system to classify breast cancer tumors as Malignant (M) or Benign (B). Five machine learning models are trained and evaluated on the same dataset using the required metrics.
 
 ## b) Dataset description
 - Dataset name: Breast Cancer Wisconsin (Diagnostic) Data Set
@@ -28,7 +26,7 @@ Mandatory files in repo:
 - `requirements.txt`
 - `README.md`
 - `test_data.csv`
-- `model/` (model files and training script)
+- `model/` (trained model files and training notebook)
 
 ## d) Models used
 Implemented models:
@@ -55,7 +53,7 @@ Implemented models:
 | KNN | Performs well after feature scaling, but slightly lower than Logistic Regression and Random Forest. |
 | Naive Bayes | Good AUC score, but lower recall and MCC compared to other models. |
 | Random Forest (Ensemble) | Best overall balance with highest AUC, best precision, and top MCC score. |
-| Overall Winner for your dataset? | **Random Forest (Ensemble)** |
+| Best performing model | **Random Forest (Ensemble)** |
 
 ## Project structure
 ```
@@ -67,7 +65,6 @@ ML_Assignment_2/
 |-- data.csv
 |-- model_metrics.csv
 |-- model/
-|   |-- train_models.py
 |   |-- train_models.ipynb
 |   |-- logistic_regression.pkl
 |   |-- decision_tree.pkl
@@ -76,15 +73,6 @@ ML_Assignment_2/
 |   |-- random_forest.pkl
 |   |-- feature_columns.json
 ```
-
-## Streamlit app features implemented
-- CSV upload option for test data
-- Model selection dropdown
-- Display of evaluation metrics
-- Confusion matrix
-- Classification report
-- Results of different models visible in app using model comparison and model selection
-
 
 ## Streamlit Deployment Link
 - https://2025ac05971.streamlit.app/
@@ -104,7 +92,3 @@ ML_Assignment_2/
 	- Test data: 114 instances (20% split)
 	- Features count: 30
 	- Class distribution: Benign/Malignant
-
-
-## Screenshot section (for final PDF)
-- Added in pdf file.

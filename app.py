@@ -120,7 +120,7 @@ def main():
 
     expected_feature_file = model_dir / "feature_columns.json"
     if not expected_feature_file.exists():
-        st.error("feature_columns.json missing. Run model/train_models.py first.")
+        st.error("feature_columns.json missing. Run model/train_models.ipynb first.")
         st.stop()
 
     with open(expected_feature_file, "r", encoding="utf-8") as f:
@@ -153,8 +153,8 @@ def main():
     with col2:
         st.write("**Class Distribution (Test):**")
         class_dist = y_user.value_counts()
-        st.write(f"• Benign: {class_dist.get(0, 0)}")
-        st.write(f"• Malignant: {class_dist.get(1, 0)}")
+        st.write(f"- Benign: {class_dist.get(0, 0)}")
+        st.write(f"- Malignant: {class_dist.get(1, 0)}")
 
     st.markdown("### 2) Overall model comparison")
     overall_df = evaluate_all_models(model_paths, x_user, y_user)
@@ -167,12 +167,9 @@ def main():
     st.table(overall_df)
 
     st.markdown("### 3) Select model")
-    # Default: select first model by default (Logistic Regression)
-    # User can click Cancel button below to deselect and choose manually
     default_model_index = 0
     model_name = st.selectbox("Choose a model", list(model_paths.keys()), index=default_model_index)
     
-    # Cancel button to allow user to deselect the default model
     if st.button("Cancel Model Selection", key="cancel_model"):
         model_name = None
         st.info("Model selection cancelled. Please select a model to continue.")
@@ -185,7 +182,7 @@ def main():
         st.stop()
     
     if not model_path.exists():
-        st.error(f"Model file missing: {model_path.name}. Run model/train_models.py first.")
+        st.error(f"Model file missing: {model_path.name}. Run model/train_models.ipynb first.")
         st.stop()
 
     model = load_model(model_path)
@@ -209,7 +206,6 @@ def main():
     )
     report_df = pd.DataFrame(report_dict).transpose().round(4)
 
-    # Accuracy is a single value in sklearn report. Clean table to avoid repeated display.
     if "accuracy" in report_df.index:
         accuracy_value = float(report_df.loc["accuracy", "precision"])
         report_df.loc["accuracy", "precision"] = pd.NA
