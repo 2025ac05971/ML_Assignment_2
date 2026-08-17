@@ -8,6 +8,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
+    classification_report,
+    confusion_matrix,
     f1_score,
     matthews_corrcoef,
     precision_score,
@@ -20,26 +22,6 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
-
-# ============================================================================
-# PLAGIARISM CHECK NOTES
-# ============================================================================
-# This code is original implementation for ML Assignment 2.
-# All models are implemented using scikit-learn standard patterns:
-# - Pipeline with StandardScaler for consistent preprocessing
-# - train_test_split with stratify for balanced train/test sets
-# - Standard sklearn model classes with documented hyperparameters:
-#   * LogisticRegression: max_iter=2000 for convergence
-#   * DecisionTree: random_state=42 for reproducibility
-#   * KNN: n_neighbors=5 (default, tunable parameter)
-#   * GaussianNB: standard Naive Bayes implementation
-#   * RandomForest: n_estimators=300, class_weight='balanced'
-# - Evaluation metrics: Accuracy, AUC, Precision, Recall, F1, MCC
-#
-# The model training, evaluation, and serialization follow best practices
-# from scikit-learn documentation. No external code copied - all written
-# for this assignment specifically.
-# ============================================================================
 
 
 def load_data(csv_path: Path) -> pd.DataFrame:
@@ -58,9 +40,8 @@ def load_data(csv_path: Path) -> pd.DataFrame:
 
 
 def build_models() -> dict:
-    """Build 5 classification models as per assignment requirements.
-    
-    Original model configurations:
+    """
+    Model configurations:
     1. Logistic Regression - Pipeline with StandardScaler
     2. Decision Tree - Plain sklearn DecisionTreeClassifier  
     3. KNN - Pipeline with StandardScaler for feature scaling
@@ -91,9 +72,7 @@ def build_models() -> dict:
 
 
 def evaluate_model(model, x_test, y_test) -> dict:
-    """Compute 6 required metrics for any sklearn classifier.
-    
-    Metrics computed:
+    """Metrics computed:
     - Accuracy: Overall correctness
     - AUC: Area Under ROC Curve (handles class imbalance)
     - Precision: True positives / predicted positives
@@ -118,6 +97,27 @@ def evaluate_model(model, x_test, y_test) -> dict:
         "F1": round(f1_score(y_test, y_pred), 4),
         "MCC": round(matthews_corrcoef(y_test, y_pred), 4),
     }
+
+
+def print_evaluation_details(model_name: str, metrics: dict, y_test, y_pred) -> None:
+    """Print model evaluation details."""
+    print("\n" + "=" * 70)
+    print(f"Evaluation Metrics: {model_name}")
+    print("=" * 70)
+    print(pd.DataFrame([metrics], index=[model_name]))
+
+    print("\nConfusion Matrix")
+    matrix = confusion_matrix(y_test, y_pred, labels=[0, 1])
+    print(
+        pd.DataFrame(
+            matrix,
+            index=["Actual Benign", "Actual Malignant"],
+            columns=["Predicted Benign", "Predicted Malignant"],
+        )
+    )
+
+    print("\nClassification Report")
+    print(classification_report(y_test, y_pred, target_names=["Benign", "Malignant"]))
 
 
 def main() -> None:
@@ -161,6 +161,9 @@ def main() -> None:
     for model_name, model in models.items():
         model.fit(x_train, y_train)
         metrics = evaluate_model(model, x_test, y_test)
+        y_pred = model.predict(x_test)
+
+        print_evaluation_details(model_name, metrics, y_test, y_pred)
 
         rows.append({"Model": model_name, **metrics})
 
